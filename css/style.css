@@ -2891,7 +2891,11 @@ body, html {
   }
   
   .social-icons li:hover.social-icons-instagram a, .social-icons.social-icons-colored li.social-icons-instagram a {
-    color: #3F729B;
+    color: #E1306C;
+  }
+
+  .social-icons li:hover.social-icons-whatsapp a, .social-icons.social-icons-colored li.social-icons-whatsapp a {
+    color: #25D366;
   }
   
   .social-icons li:hover.social-icons-skype a, .social-icons.social-icons-colored li.social-icons-skype a {
