@@ -19,6 +19,31 @@
     <link rel="stylesheet" href="css/carousel.css">
     <!-- Popup min -->
     <link rel="stylesheet" href="css/popup.css">
+
+    <script type="text/javascript">
+		function submitEmailForm(form) {
+			var obj = new XMLHttpRequest();
+			obj.onreadystatechange = function(){
+				if(obj.readyState == 4){
+					if(obj.status == 200){
+						var res = JSON.parse(obj.responseText);
+						alert("Mensaje enviado correctamente!");
+                        document.getElementById('name').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('asunto').value = "";
+                        document.getElementById('message').value = "";
+                    }
+					else{
+						alert("XMLHttp status " + obj.status + ": " + obj.statusText);
+					}
+				}
+			};
+			obj.open("post", form.action, true);
+			obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
+			obj.send(JSON.stringify({ name: form.name.value, email: form.email.value, asunto: form.asunto.value, message: form.message.value }));
+			return false;
+		}
+	</script>
 </head>
 <body>
     <body class="side-header" data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="1">
@@ -512,7 +537,7 @@
                   </div>
                   <div class="col-md-8 col-xl-9 order-0 order-md-1">
                     <h2 class="mb-3 text-5 text-white text-uppercase text-center text-md-start">Envíame un mensaje</h2>
-                    <form id="contact-form" class="form-dark">
+                    <form id="contact-form" class="form-dark" method="post" action="/send-email" enctype="multipart/form-data" onsubmit="return submitEmailForm(this);">
                       <div class="row g-4">
                         <div class="col-xl-6">
                             <input name="name" type="text" id="name" class="form-control" required placeholder="Nombre">
@@ -520,12 +545,17 @@
                         <div class="col-xl-6">
                             <input name="email" type="email" id="email" class="form-control" required placeholder="Correo electrónico">
                         </div>
+
+                        <div class="col-xl-12">
+                            <input name="asunto" type="text" id="asunto" class="form-control" required placeholder="Asunto">
+                        </div>
+
                         <div class="col">
                             <textarea name="message" id="message" class="form-control" rows="5" required placeholder="Cuéntame sobre lo que necesitas..."></textarea>
                         </div>
                       </div>
                       <p class="text-center mt-4 mb-0">
-                        <button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex" type="submit">Enviar Mensaje</button>
+                        <button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex" type="submit" value="submit">Enviar Mensaje</button>
                       </p>
                     </form>
                   </div>
@@ -555,6 +585,7 @@
         <!-- JavaScript --> 
 <script src="js/jquery.min.js"></script>
 <!-- Message - Contact Form -->
+  
 <script src="js/message.js"></script>
 <!-- Easing --> 
 <script src="js/jquery.easing.min.js"></script> 

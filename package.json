@@ -1,0 +1,24 @@
+{
+  "name": "proyectos-2022",
+  "version": "1.0.0",
+  "description": "Portafolio Milany Vaca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgvac22/milany-vaca.git"
+  },
+  "author": "Edgardo Vaca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edgvac22/milany-vaca/issues"
+  },
+  "homepage": "https://github.com/edgvac22/milany-vaca#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15"
+  }
+}
