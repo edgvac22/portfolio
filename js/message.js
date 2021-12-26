@@ -89,8 +89,8 @@ app.post("/send-email", (request, response) => {
         secure: true,
         port: 465,
         auth: {
-            user: 'edgardovac2298@gmail.com',
-            pass: 'anjmkmcxodyrvbvp'
+            user: 'youremail@gmail.com',
+            pass: 'your_secret_password'
         },
         tls: {
             rejectUnauthorized: false
@@ -100,8 +100,8 @@ app.post("/send-email", (request, response) => {
 	var htmlBody = `<h2>Mensaje enviado desde el portafolio</h2><p>De: ${request.body.name} <br>Asunto: ${request.body.asunto} <br>Correo: <a href="mailto:${request.body.email}">${request.body.email}</a></p><p><br>Mensaje: ${request.body.message}</p>`;
 
     var mailOptions = {
-        from: "edgardovac2298@gmail.com",
-        to: "edgardovac2298@gmail.com",
+        from: "your_email",
+        to: "your_email",
         subject: `${request.body.asunto}`,
         text: textBody,
 		html: htmlBody
