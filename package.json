@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edgvac22/milany-vaca.git"
+    "url": "git+https://github.com/edgvac22/edgardo-vaca.git"
   },
   "author": "Edgardo Vaca",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/edgvac22/milany-vaca/issues"
+    "url": "https://github.com/edgvac22/edgardo-vaca/issues"
   },
-  "homepage": "https://github.com/edgvac22/milany-vaca#readme",
+  "homepage": "https://github.com/edgvac22/edgardo-vaca#readme",
   "dependencies": {
     "express": "^4.17.2",
     "nodemailer": "^6.7.2",
